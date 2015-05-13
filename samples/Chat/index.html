@@ -7,32 +7,47 @@
     <script>
         dojoConfig = {
             // Don't attempt to parse the page for widgets
-            parseOnLoad: true
+            parseOnLoad: true,
+            baseUrl: "/js/",
+            packages: [
+                { name: "xmpp", location: "XmppConnection" }
+            ]
         };
     </script>
+
+    <!-- STROPHE -->
+    <script src="js/strophe.js"></script>
 
     <!-- DOJO -->
     <script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"></script>
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dijit/themes/claro/claro.css">
 
     <script>
-        require(["dojo/parser", "dojo/on", "dojo/dom", "dojo/dom-style", "dijit/registry", "dijit/form/Button", "dojo/domReady!"],
-            function (parser, on, dom, style, registry, button, ready) {
+        require(["dojo/parser", "dojo/on", "dojo/dom", "dojo/dom-style", "dijit/registry", "dijit/form/Button", "js/XmppConnection", "dojo/domReady!"],
+            function (parser, on, dom, style, registry, button, xmppConnection, ready) {
 
                 // Parse the page
                 parser.parse();
 
+                var connection = new xmppConnection();
+
                 on(connectButton, "click", function (evt) {
                     var button = registry.byId("connectButton");
+                    
+                    connection.connect("chatter01@esprimo", "chat");
                     console.log(button.label);
                 });
+                on(disconnectButton, "click", function (evt) {
+                    var button = registry.byId("disconnectButton");
 
-                
+                    connection.disconnect();
+                    console.log(button.label);
+                });
         });
     </script>
 </head>
 <body class="claro">
-    <button id="connectButton" label="Connect" type="button" data-dojo-type="dijit.form.Button">
-    </button>
+    <button id="connectButton" label="Connect" type="button" data-dojo-type="dijit.form.Button"></button>
+    <button id="disconnectButton" label="Disconnect" type="button" data-dojo-type="dijit.form.Button"></button>
 </body>
 </html>
