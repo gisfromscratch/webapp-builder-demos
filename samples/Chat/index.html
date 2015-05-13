@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Chat samples</title>
+
+    <!-- Configure Dojo first -->
+    <script>
+        dojoConfig = {
+            // Don't attempt to parse the page for widgets
+            parseOnLoad: true
+        };
+    </script>
+
+    <!-- DOJO -->
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"></script>
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dijit/themes/claro/claro.css">
+
+    <script>
+        require(["dojo/parser", "dojo/on", "dojo/dom", "dojo/dom-style", "dijit/registry", "dijit/form/Button", "dojo/domReady!"],
+            function (parser, on, dom, style, registry, button, ready) {
+
+                // Parse the page
+                parser.parse();
+
+                on(connectButton, "click", function (evt) {
+                    var button = registry.byId("connectButton");
+                    console.log(button.label);
+                });
+
+                
+        });
+    </script>
+</head>
+<body class="claro">
+    <button id="connectButton" label="Connect" type="button" data-dojo-type="dijit.form.Button">
+    </button>
+</body>
+</html>
