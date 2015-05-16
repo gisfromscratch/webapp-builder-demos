@@ -23,8 +23,8 @@
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dijit/themes/claro/claro.css">
 
     <script>
-        require(["dojo/parser", "dojo/on", "dojo/dom", "dojo/dom-style", "dijit/registry", "dijit/form/Button", "js/XmppConnection", "dojo/domReady!"],
-            function (parser, on, dom, style, registry, button, xmppConnection, ready) {
+        require(["dojo/parser", "dojo/on", "dojo/topic", "dojo/dom", "dojo/dom-style", "dijit/registry", "dijit/form/Button", "js/XmppConnection", "dojo/domReady!"],
+            function (parser, on, topic, dom, style, registry, button, xmppConnection, ready) {
 
                 // Parse the page
                 parser.parse();
@@ -42,6 +42,14 @@
 
                     connection.disconnect();
                     console.log(button.label);
+                });
+
+                // Events
+                topic.subscribe(connection.connectedEvent, function () {
+                    console.log("Connected");
+                });
+                topic.subscribe(connection.disconnectedEvent, function () {
+                    console.log("Disconnected");
                 });
         });
     </script>

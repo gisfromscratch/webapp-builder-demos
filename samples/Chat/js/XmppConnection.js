@@ -1,14 +1,15 @@
 ﻿/**
  * A simple XMPP connection.
  */
-define(["dojo/_base/declare"], function (declare) {
+define(["dojo/_base/declare", "dojo/_base/lang", "dojo/topic"], function (declare, dojo, topic) {
     return declare(null, {
 
-        _user: "",
-        _pass: "",
         _url: "http://esprimo:7070/http-bind/ ",
 
-        _connection: undefined,
+        _connection: null,
+
+        connectedEvent: "connected",
+        disconnectedEvent: "disconnected",
 
         connect: function (user, pass) {
             if (this._connection) {
@@ -16,7 +17,7 @@ define(["dojo/_base/declare"], function (declare) {
             }
 
             this._connection = new Strophe.Connection(this._url, { sync: false });
-            this._connection.connect(user, pass, this.onStatusChanged);
+            this._connection.connect(user, pass, dojo.hitch(this, this.onStatusChanged));
         },
 
         disconnect: function () {
@@ -24,16 +25,18 @@ define(["dojo/_base/declare"], function (declare) {
                 return;
             }
 
-            this._connection.disconnect(this.onStatusChanged);
+            this._connection.disconnect(dojo.hitch(this, this.onStatusChanged));
             delete this._connection;
         },
 
         onStatusChanged: function(status) {
             switch (status) {
                 case Strophe.Status.CONNECTED:
+                    topic.publish(this.connectedEvent);
                     break;
 
                 case Strophe.Status.DISCONNECTED:
+                    topic.publish(this.disconnectedEvent);
                     break;
             }
         }
