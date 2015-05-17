@@ -1,7 +1,7 @@
 ﻿/**
  * A simple XMPP connection.
  */
-define(["dojo/_base/declare", "dojo/_base/lang", "dojo/topic"], function (declare, dojo, topic) {
+define(["dojo/_base/declare", "dojo/_base/lang", "dojo/topic", "js/XmlPrinter"], function (declare, dojo, topic, xmlPrinter) {
     return declare(null, {
 
         _url: "http://esprimo:7070/http-bind/ ",
@@ -43,15 +43,19 @@ define(["dojo/_base/declare", "dojo/_base/lang", "dojo/topic"], function (declar
                 return;
             }
 
-            var xmppMessage = $msg({ to: userJid, type: "chat" }).c("body").t(message);
+            var xmppMessage = $msg({ from: this._userJid, to: userJid, type: "chat" }).c("body").t(message);
             this._connection.send(xmppMessage);
         },
 
         onMessageReceived: function(message) {
             // TODO: Handle messages
-
-            // This handler should be called again
-            return true;
+            try {
+                var printer = new xmlPrinter();
+                printer.printPrettyXml(message);
+            } finally {
+                // This handler should be called again
+                return true;
+            }
         },
 
         onPresenceChanged: function(presence) {

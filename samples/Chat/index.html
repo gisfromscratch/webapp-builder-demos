@@ -10,7 +10,10 @@
             parseOnLoad: true,
             baseUrl: "/js/",
             packages: [
-                { name: "xmpp", location: "XmppConnection" }
+                {
+                    name: "xmpp", location: "XmppConnection",
+                    name: "xmlp", location: "XmlPrinter"
+                }
             ]
         };
     </script>
@@ -42,6 +45,11 @@
 
                     connection.disconnect();
                     console.log(button.label);
+                });
+                on(sendButton, "click", function (evt) {
+                    // Send a message
+                    var toUserJid = "chatter02@esprimo";
+                    connection.sendMessage(toUserJid, "Hello . . .");
                 });
 
                 // Events
