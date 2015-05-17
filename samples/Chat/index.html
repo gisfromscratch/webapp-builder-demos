@@ -47,9 +47,15 @@
                 // Events
                 topic.subscribe(connection.connectedEvent, function () {
                     console.log("Connected");
+
+                    var sendButton = registry.byId("sendButton");
+                    sendButton.setDisabled(false);
                 });
                 topic.subscribe(connection.disconnectedEvent, function () {
                     console.log("Disconnected");
+
+                    var sendButton = registry.byId("sendButton");
+                    sendButton.setDisabled(true);
                 });
         });
     </script>
@@ -57,5 +63,6 @@
 <body class="claro">
     <button id="connectButton" label="Connect" type="button" data-dojo-type="dijit.form.Button"></button>
     <button id="disconnectButton" label="Disconnect" type="button" data-dojo-type="dijit.form.Button"></button>
+    <button id="sendButton" label="Send" type="button" data-dojo-type="dijit.form.Button" disabled="true"></button>
 </body>
 </html>

@@ -7,12 +7,17 @@ define(["dojo/_base/declare", "dojo/_base/lang", "dojo/topic"], function (declar
         _url: "http://esprimo:7070/http-bind/ ",
 
         _connection: null,
+        _userJid: "",
         _connected: false,
 
         _handlers: [],
 
         connectedEvent: "connected",
         disconnectedEvent: "disconnected",
+
+        getUserJid: function () {
+            return this._userJid;
+        },
 
         connect: function (user, pass) {
             if (this._connection) {
@@ -21,6 +26,7 @@ define(["dojo/_base/declare", "dojo/_base/lang", "dojo/topic"], function (declar
 
             this._connection = new Strophe.Connection(this._url, { sync: false });
             this._connection.connect(user, pass, dojo.hitch(this, this.onStatusChanged));
+            this._userJid = user;
         },
 
         disconnect: function () {
@@ -32,12 +38,20 @@ define(["dojo/_base/declare", "dojo/_base/lang", "dojo/topic"], function (declar
             delete this._connection;
         },
 
-        sendMessage: function(message) {
+        sendMessage: function(userJid, message) {
             if (!this._connection || !this._connected) {
                 return;
             }
 
-            // TODO: Send the message
+            var xmppMessage = $msg({ to: userJid, type: "chat" }).c("body").t(message);
+            this._connection.send(xmppMessage);
+        },
+
+        onMessageReceived: function(message) {
+            // TODO: Handle messages
+
+            // This handler should be called again
+            return true;
         },
 
         onPresenceChanged: function(presence) {
@@ -50,10 +64,13 @@ define(["dojo/_base/declare", "dojo/_base/lang", "dojo/topic"], function (declar
                     this._connected = true;
                     topic.publish(this.connectedEvent);
 
-                    // Add a handler and send the default presence
+                    // Add a presence and message handler and send the default presence
                     // User will shown as online
-                    var handler = this._connection.addHandler(dojo.hitch(this, this.onPresenceChanged));
-                    this._handlers.push(handler);
+                    var presenceHandler = this._connection.addHandler(dojo.hitch(this, this.onPresenceChanged));
+                    this._handlers.push(presenceHandler);
+                    var messageHandler = this._connection.addHandler(dojo.hitch(this, this.onMessageReceived));
+                    this._handlers.push(messageHandler);
+
                     var presence = $pres();
                     this._connection.send(presence);
                     break;
