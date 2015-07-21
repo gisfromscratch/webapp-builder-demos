@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EF08DAB5-7600-425F-85A3-45E0B2ED5E8E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TileLayoutWidget</RootNamespace>
+    <AssemblyName>TileLayoutWidget</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config" />
+    <Content Include="widgets\Bookmark\common.css" />
+    <Content Include="widgets\Bookmark\css\images\add.png" />
+    <Content Include="widgets\Bookmark\css\style.css" />
+    <Content Include="widgets\Bookmark\ImageNode.js" />
+    <Content Include="widgets\Bookmark\images\icon.png" />
+    <Content Include="widgets\Bookmark\images\thumbnail_arches_national_park.png" />
+    <Content Include="widgets\Bookmark\images\thumbnail_default.png" />
+    <Content Include="widgets\Bookmark\images\thumbnail_eiffel_tower.png" />
+    <Content Include="widgets\Bookmark\images\thumbnail_forbidden_city.png" />
+    <Content Include="widgets\Bookmark\images\thumbnail_giza_pyramid.png" />
+    <Content Include="widgets\Bookmark\images\thumbnail_great_wall.png" />
+    <Content Include="widgets\Bookmark\images\thumbnail_sf.png" />
+    <Content Include="widgets\Bookmark\images\thumbnail_sydney_opera.png" />
+    <Content Include="widgets\Bookmark\images\thumbnail_us.png" />
+    <Content Include="widgets\Bookmark\nls\ar\strings.js" />
+    <Content Include="widgets\Bookmark\nls\cs\strings.js" />
+    <Content Include="widgets\Bookmark\nls\da\strings.js" />
+    <Content Include="widgets\Bookmark\nls\de\strings.js" />
+    <Content Include="widgets\Bookmark\nls\el\strings.js" />
+    <Content Include="widgets\Bookmark\nls\es\strings.js" />
+    <Content Include="widgets\Bookmark\nls\et\strings.js" />
+    <Content Include="widgets\Bookmark\nls\fi\strings.js" />
+    <Content Include="widgets\Bookmark\nls\fr\strings.js" />
+    <Content Include="widgets\Bookmark\nls\he\strings.js" />
+    <Content Include="widgets\Bookmark\nls\it\strings.js" />
+    <Content Include="widgets\Bookmark\nls\ja\strings.js" />
+    <Content Include="widgets\Bookmark\nls\ko\strings.js" />
+    <Content Include="widgets\Bookmark\nls\lt\strings.js" />
+    <Content Include="widgets\Bookmark\nls\lv\strings.js" />
+    <Content Include="widgets\Bookmark\nls\nb\strings.js" />
+    <Content Include="widgets\Bookmark\nls\nl\strings.js" />
+    <Content Include="widgets\Bookmark\nls\pl\strings.js" />
+    <Content Include="widgets\Bookmark\nls\pt-br\strings.js" />
+    <Content Include="widgets\Bookmark\nls\pt-pt\strings.js" />
+    <Content Include="widgets\Bookmark\nls\ro\strings.js" />
+    <Content Include="widgets\Bookmark\nls\ru\strings.js" />
+    <Content Include="widgets\Bookmark\nls\strings.js" />
+    <Content Include="widgets\Bookmark\nls\sv\strings.js" />
+    <Content Include="widgets\Bookmark\nls\th\strings.js" />
+    <Content Include="widgets\Bookmark\nls\tr\strings.js" />
+    <Content Include="widgets\Bookmark\nls\vi\strings.js" />
+    <Content Include="widgets\Bookmark\nls\zh-cn\strings.js" />
+    <Content Include="widgets\Bookmark\setting\css\images\add.png" />
+    <Content Include="widgets\Bookmark\setting\css\images\add_mark.png" />
+    <Content Include="widgets\Bookmark\setting\css\images\delete_mark.png" />
+    <Content Include="widgets\Bookmark\setting\css\images\drop.png" />
+    <Content Include="widgets\Bookmark\setting\css\images\edit.png" />
+    <Content Include="widgets\Bookmark\setting\css\images\edit_mark.png" />
+    <Content Include="widgets\Bookmark\setting\css\style.css" />
+    <Content Include="widgets\Bookmark\setting\Edit.html" />
+    <Content Include="widgets\Bookmark\setting\Edit.js" />
+    <Content Include="widgets\Bookmark\setting\nls\ar\strings.js" />
+    <Content Include="widgets\Bookmark\setting\nls\cs\strings.js" />
+    <Content Include="widgets\Bookmark\setting\nls\da\strings.js" />
+    <Content Include="widgets\Bookmark\setting\nls\de\strings.js" />
+    <Content Include="widgets\Bookmark\setting\nls\el\strings.js" />
+    <Content Include="widgets\Bookmark\setting\nls\es\strings.js" />
+    <Content Include="widgets\Bookmark\setting\nls\et\strings.js" />
+    <Content Include="widgets\Bookmark\setting\nls\fi\strings.js" />
+    <Content Include="widgets\Bookmark\setting\nls\fr\strings.js" />
+    <Content Include="widgets\Bookmark\setting\nls\he\strings.js" />
+    <Content Include="widgets\Bookmark\setting\nls\it\strings.js" />
+    <Content Include="widgets\Bookmark\setting\nls\ja\strings.js" />
+    <Content Include="widgets\Bookmark\setting\nls\ko\strings.js" />
+    <Content Include="widgets\Bookmark\setting\nls\lt\strings.js" />
+    <Content Include="widgets\Bookmark\setting\nls\lv\strings.js" />
+    <Content Include="widgets\Bookmark\setting\nls\nb\strings.js" />
+    <Content Include="widgets\Bookmark\setting\nls\nl\strings.js" />
+    <Content Include="widgets\Bookmark\setting\nls\pl\strings.js" />
+    <Content Include="widgets\Bookmark\setting\nls\pt-br\strings.js" />
+    <Content Include="widgets\Bookmark\setting\nls\pt-pt\strings.js" />
+    <Content Include="widgets\Bookmark\setting\nls\ro\strings.js" />
+    <Content Include="widgets\Bookmark\setting\nls\ru\strings.js" />
+    <Content Include="widgets\Bookmark\setting\nls\strings.js" />
+    <Content Include="widgets\Bookmark\setting\nls\sv\strings.js" />
+    <Content Include="widgets\Bookmark\setting\nls\th\strings.js" />
+    <Content Include="widgets\Bookmark\setting\nls\tr\strings.js" />
+    <Content Include="widgets\Bookmark\setting\nls\vi\strings.js" />
+    <Content Include="widgets\Bookmark\setting\nls\zh-cn\strings.js" />
+    <Content Include="widgets\Bookmark\setting\Setting.html" />
+    <Content Include="widgets\Bookmark\setting\Setting.js" />
+    <Content Include="widgets\Bookmark\Widget.html" />
+    <Content Include="widgets\Bookmark\Widget.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="widgets\Bookmark\config.json" />
+    <Content Include="widgets\Bookmark\manifest.json" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56755</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56755/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
