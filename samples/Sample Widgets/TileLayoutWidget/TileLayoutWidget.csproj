@@ -141,6 +141,11 @@
     <Content Include="widgets\Bookmark\setting\Setting.js" />
     <Content Include="widgets\Bookmark\Widget.html" />
     <Content Include="widgets\Bookmark\Widget.js" />
+    <Content Include="widgets\CustomWidgetTemplate\css\style.css" />
+    <Content Include="widgets\CustomWidgetTemplate\images\icon.png" />
+    <Content Include="widgets\CustomWidgetTemplate\nls\strings.js" />
+    <Content Include="widgets\CustomWidgetTemplate\Widget.html" />
+    <Content Include="widgets\CustomWidgetTemplate\Widget.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -154,6 +159,8 @@
     </None>
     <Content Include="widgets\Bookmark\config.json" />
     <Content Include="widgets\Bookmark\manifest.json" />
+    <Content Include="widgets\CustomWidgetTemplate\config.json" />
+    <Content Include="widgets\CustomWidgetTemplate\manifest.json" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
