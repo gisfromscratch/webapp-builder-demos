@@ -1,24 +1,24 @@
 {
-  "name": "CustomWidgetTemplate",
+  "name": "TileLayout",
   "2D": true,
   "3D": false,
   "platform": "HTML",
   "version": "1.2",
   "wabVersion": "1.2",
-  "author": "Esri R&D Center Beijing",
-  "description": "This is the custom widget",
+  "author": "gisfromscratch@live.de",
+  "description": "Widget using the tile layout container.",
   "copyright": "",
   "license": "http://www.apache.org/licenses/LICENSE-2.0",
   "properties": {
 		"inPanel":true,
-		"hasLocale": true,
+		"hasLocale": false,
 		"hasStyle":true,
 		"hasConfig":true,
 		"hasUIFile":true,
-		"hasSettingPage":true,
-		"hasSettingUIFile":true,
-		"hasSettingLocale":true,
-		"hasSettingStyle":true,
+		"hasSettingPage":false,
+		"hasSettingUIFile":false,
+		"hasSettingLocale":false,
+		"hasSettingStyle":false,
 		"IsController":false
   }
 }

@@ -98,8 +98,7 @@
                 "name": "TileLayout",
                 "label": "TileLayout",
                 "version": "1.2",
-                "uri": "widgets/TileLayout/Widget",
-                "config": "configs/TileLayout/config.json"
+                "uri": "widgets/TileLayout/Widget"
             },
             {
                 "position": {
