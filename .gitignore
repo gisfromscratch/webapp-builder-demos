@@ -2,3 +2,8 @@
 /samples/Sample Widgets/TileLayoutWidget/obj
 /samples/Sample Widgets/TileLayoutWidget/bin
 /samples/Sample Widgets/*.suo
+/samples/Sample Widgets/WebAppWidgets/obj/Debug
+/samples/Sample Widgets/WebAppWidgets/obj/Debug
+*.cache
+/samples/Sample Widgets/WebAppWidgets/bin
+*.user

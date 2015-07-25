@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TileLayoutWidget", "TileLayoutWidget\TileLayoutWidget.csproj", "{EF08DAB5-7600-425F-85A3-45E0B2ED5E8E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppWidgets", "WebAppWidgets\WebAppWidgets.csproj", "{EF08DAB5-7600-425F-85A3-45E0B2ED5E8E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
