@@ -1,0 +1,32 @@
+.edu-widget-bubble-message {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.edu-widget-bubble-message .input-message-text {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.edu-widget-bubble-message .add-section {
+    position: relative;
+    height: 30px;
+    margin-top: 7px;
+    overflow: visible;
+}
+
+.edu-widget-bubble-message .jimu-btn {
+    float: none;
+    margin: auto;
+    width: 150px;
+}
+
+.edu-widget-bubble-message .jimu-state-error {
+    margin-top: 4px;
+    visibility: hidden;
+}

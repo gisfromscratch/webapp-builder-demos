@@ -141,6 +141,11 @@
     <Content Include="widgets\Bookmark\setting\Setting.js" />
     <Content Include="widgets\Bookmark\Widget.html" />
     <Content Include="widgets\Bookmark\Widget.js" />
+    <Content Include="widgets\BubbleMessage\css\style.css" />
+    <Content Include="widgets\BubbleMessage\images\icon.png" />
+    <Content Include="widgets\BubbleMessage\nls\strings.js" />
+    <Content Include="widgets\BubbleMessage\Widget.html" />
+    <Content Include="widgets\BubbleMessage\Widget.js" />
     <Content Include="widgets\TileLayout\css\common.css" />
     <Content Include="widgets\TileLayout\css\style.css" />
     <Content Include="widgets\TileLayout\ImageNode.js" />
@@ -174,6 +179,8 @@
     <Content Include="widgets\Bookmark\manifest.json" />
     <Content Include="widgets\TileLayout\config.json" />
     <Content Include="widgets\TileLayout\manifest.json" />
+    <Content Include="widgets\BubbleMessage\config.json" />
+    <Content Include="widgets\BubbleMessage\manifest.json" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

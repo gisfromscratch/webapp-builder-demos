@@ -76,7 +76,6 @@
                     "width": 400,
                     "height": 410
                 },
-                "placeholderIndex": 1,
                 "id": "_5",
                 "positionRelativeTo": "map",
                 "name": "Bookmark",
@@ -92,7 +91,6 @@
                     "width": 380,
                     "height": 410
                 },
-                "placeholderIndex": 1,
                 "id": "_6",
                 "positionRelativeTo": "map",
                 "name": "TileLayout",
@@ -107,9 +105,12 @@
                     "width": 380,
                     "height": 410
                 },
-                "placeholderIndex": 2,
                 "id": "_7",
-                "positionRelativeTo": "map"
+                "positionRelativeTo": "map",
+                "name": "BubbleMessage",
+                "label": "BubbleMessage",
+                "version": "1.2",
+                "uri": "widgets/BubbleMessage/Widget"
             },
             {
                 "uri": "widgets/OverviewMap/Widget",
