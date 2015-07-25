@@ -2,6 +2,7 @@
     root: ({
         placeholderMessageText: "New message . . .",
         addSelfMessageButtonLabel: "Send",
-        addOtherMessageButtonLabel: "Receive"
+        addOtherMessageButtonLabel: "Receive",
+        clearMessageButtonLabel: "Clear"
     }) 
 });

@@ -3,9 +3,11 @@ define([
     'dojo/_base/array',
     'dojo/_base/html',
     'dojo/_base/lang',
+    'dojo/dom-class',
+    'dojo/dom-construct',
     'dojo/on',
     'jimu/BaseWidget'],
-function (declare, array, html, lang, on, BaseWidget) {
+function (declare, array, html, lang, domClass, domConstruct, on, BaseWidget) {
     //To create a widget, you need to derive from BaseWidget.
     return declare([BaseWidget], {
         // Custom widget code goes here 
@@ -20,6 +22,7 @@ function (declare, array, html, lang, on, BaseWidget) {
          */
         addSelfMessageButton: null,
         addOtherMessageButton: null,
+        messageText: null,
         messageList: null,
 
         //methods to communication with app container:
@@ -69,17 +72,61 @@ function (declare, array, html, lang, on, BaseWidget) {
         // },
 
         /**
-         * Add button was clicked.
+         * Adds a message to the DOM.
          */
         _onAddSelfMessageButtonClicked: function () {
-            // TODO: Add a new message
+            if (!this.messageList) {
+                console.error('this.messageList was not injected!');
+                return;
+            }
+
+            if (this.messageText) {
+                var message = this.messageText.value;
+                
+                // Create and add a new dom message node
+                var messageNode = domConstruct.toDom('<div>' + message + '</div><br>');
+                domConstruct.place(messageNode, this.messageList);
+                domClass.add(messageNode, 'self-message-text');
+                
+                this.messageText.value = '';
+            } else {
+                console.error('this.messageText was not injected!');
+            }
         },
 
         /**
-         * Remove button was clicked.
+         * Adds a message from an other user to the DOM.
          */
         _onAddOtherMessageButtonClicked: function () {
-            // TODO: Add a new message
+            if (!this.messageList) {
+                console.error('this.messageList was not injected!');
+                return;
+            }
+
+            if (this.messageText) {
+                var message = this.messageText.value;
+
+                // Create and add a new dom message node
+                var messageNode = domConstruct.toDom('<div class=\'other-message-text\'>' + message + '</div><br>');
+                domConstruct.place(messageNode, this.messageList);
+                domClass.add(messageNode, 'other-message-text');
+
+                this.messageText.value = '';
+            } else {
+                console.error('this.messageText was not injected!');
+            }
+        },
+        
+        /**
+         * Clear all the existing messages.
+         */
+        _onClearMessageButtonClicked: function () {
+            if (!this.messageList) {
+                console.error('this.messageList was not injected!');
+                return;
+            }
+
+            domConstruct.empty(this.messageList);
         }
     });
 });

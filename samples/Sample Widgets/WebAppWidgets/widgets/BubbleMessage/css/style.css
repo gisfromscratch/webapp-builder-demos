@@ -13,6 +13,23 @@
     width: 100%;
 }
 
+.edu-widget-bubble-message .message-list {
+    height: 100%;
+    width: 100%;
+}
+
+.edu-widget-bubble-message .self-message-text {
+    position: relative;
+    float: left;
+    clear: both;
+}
+
+.edu-widget-bubble-message .other-message-text {
+    position: relative;
+    float: right;
+    clear: both;
+}
+
 .edu-widget-bubble-message .add-section {
     position: relative;
     height: 30px;
