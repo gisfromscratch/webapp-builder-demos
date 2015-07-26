@@ -141,8 +141,11 @@
     <Content Include="widgets\Bookmark\setting\Setting.js" />
     <Content Include="widgets\Bookmark\Widget.html" />
     <Content Include="widgets\Bookmark\Widget.js" />
+    <Content Include="widgets\BubbleMessage\css\bubble.css" />
     <Content Include="widgets\BubbleMessage\css\style.css" />
     <Content Include="widgets\BubbleMessage\images\icon.png" />
+    <Content Include="widgets\BubbleMessage\css\images\speech_bubble_left_2.png" />
+    <Content Include="widgets\BubbleMessage\css\images\speech_bubble_right_2.png" />
     <Content Include="widgets\BubbleMessage\nls\strings.js" />
     <Content Include="widgets\BubbleMessage\Widget.html" />
     <Content Include="widgets\BubbleMessage\Widget.js" />

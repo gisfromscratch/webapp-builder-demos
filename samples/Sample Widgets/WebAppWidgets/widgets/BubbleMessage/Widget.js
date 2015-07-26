@@ -4,9 +4,10 @@ define([
     'dojo/_base/html',
     'dojo/_base/lang',
     'dojo/dom-construct',
+    'dojo/dom-class',
     'dojo/on',
     'jimu/BaseWidget'],
-function (declare, array, html, lang, domConstruct, on, BaseWidget) {
+function (declare, array, html, lang, domConstruct, domClass, on, BaseWidget) {
     //To create a widget, you need to derive from BaseWidget.
     return declare([BaseWidget], {
         // Custom widget code goes here 
@@ -83,8 +84,9 @@ function (declare, array, html, lang, domConstruct, on, BaseWidget) {
                 var message = this.messageText.value;
                 
                 // Create and add a new dom message node
-                var messageNode = domConstruct.toDom('<div class=\'base-message-text self-message-text\'>' + message + '</div><br>');
+                var messageNode = domConstruct.toDom('<div>' + message + '</div>');
                 domConstruct.place(messageNode, this.messageList);
+                domClass.add(messageNode, 'base-message-text self-message-text');
                 
                 this.messageText.value = '';
             } else {
@@ -105,8 +107,9 @@ function (declare, array, html, lang, domConstruct, on, BaseWidget) {
                 var message = this.messageText.value;
 
                 // Create and add a new dom message node
-                var messageNode = domConstruct.toDom('<div class=\'base-message-text other-message-text\'>' + message + '</div><br>');
+                var messageNode = domConstruct.toDom('<div>' + message + '</div>');
                 domConstruct.place(messageNode, this.messageList);
+                domClass.add(messageNode, 'base-message-text other-message-text');
 
                 this.messageText.value = '';
             } else {
