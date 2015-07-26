@@ -18,16 +18,24 @@
     width: 100%;
 }
 
-.edu-widget-bubble-message .self-message-text {
+.edu-widget-bubble-message .base-message-text {
     position: relative;
-    float: left;
+    margin-top: 4px;
+    padding: 4px 7px 4px 7px;
+    max-width: 80%;
     clear: both;
+    border: 1px solid #808080;
+}
+
+.edu-widget-bubble-message .self-message-text {
+    float: left;
+    margin-right: auto;
 }
 
 .edu-widget-bubble-message .other-message-text {
-    position: relative;
     float: right;
-    clear: both;
+    margin-left: auto;
+    text-align: right;
 }
 
 .edu-widget-bubble-message .add-section {
